@@ -1,0 +1,210 @@
+		header > *, main > *, footer > * {
+			margin: 0;
+		}
+		header {
+			background-color:#0442AF;
+			color:white;
+		}
+		main {
+			background-color:#007632;
+			color:white;
+		}
+		h1 {
+			text-align:center;
+		}
+		main {
+			display: flex;
+			width:100%;
+		}
+		h2 {
+			text-align:center;
+		}
+		.columnaPrincipal {
+			width:65%;
+			display:flex;
+			flex-direction:column;
+		}
+		.columnaPrincipal h2{
+			margin:0;
+			background-color:#004B05;
+		}
+		.peliculas {
+			display:flex;
+			flex-direction: column;
+			width:100%;
+		}
+		.Pelicula {
+			display:flex;
+			align-items:center;
+			width:calc(100%-40px);
+			padding:20px;
+			background-color:#59A45D;
+			margin:10px;
+		}
+		.titulo {
+			text-align:center;
+			width:15%;
+		}
+		.texto {
+			text-align:justify;
+			width:70%;
+		}
+		.texto:hover {
+			background-color: #add8e6;
+            transition: background-color 0.5s ease;
+		}
+		.columnaSecundaria {
+			width:35%;
+			display: flex;
+			flex-direction:column;
+			background-color: #609400;
+		}
+		.columnaSecundaria h2 {
+			background-color:#497000;
+			margin:0;
+		}
+		.imagen {
+			width:15%;
+			height:auto;
+			object-fit:cover;
+		}
+		.marketing {
+			display:flex;
+			width:calc(100%-40px);
+			padding:20px;
+			align-items:center;
+		}
+		.banner {
+			width: 25%;
+			text-align:center;
+		}
+		.pelis {
+			width:75%;
+			display:flex;
+		}
+		.cartel {
+			width:80%;
+			height: auto;
+			object-fit:cover;
+		}
+		.peli {
+			width:33%;
+			text-align: center;
+		}
+		footer {
+			text-align:center;
+			background-color:#0442AF;
+			font-weight:bold;
+			color:white;
+		}
+		.comentarios {
+			display: flex;
+			flex-direction:column;
+			width:100%;
+		}
+		.comentario {
+			text-align:center;
+			display:flex;
+			flex-direction:column;
+			width:calc(100%-40px);
+			padding:20px;	
+			background-color:#A3B301;
+			margin:10px;
+		}
+		.comentario img {
+			width: 15%;
+			height:auto;
+			object-fit:cover;
+		}
+		h5 {
+			margin:0;
+		}
+		.redesSociales {
+			display:flex;
+			width:100%;
+			flex-direction:column;
+		}
+		.redes {
+			display:flex;
+			width:calc(100%-40px);
+			padding:20px;
+		}
+		.red {
+			width:33%;
+			text-align: center;
+		}
+		.red img {
+			width:50%;
+			height:auto;
+		}
+		@media screen and (max-width:576px){
+			main {
+				flex-direction:column;
+			}
+			.columnaPrincipal{
+				width:100%;
+			}
+			.columnaSecundaria{
+				width:100%;
+			}
+			.Pelicula {
+				flex-direction:column;
+			}
+			.titulo {
+				width:100%;
+				margin:0;
+			}
+			.texto {
+				width:100%;
+			}
+			.imagen {
+				width:50%;
+			}
+			.comentario img {
+				width:30%;
+			}	
+			.peli {
+				width:100%;
+				display:none;
+			}	
+			.peli:nth-child(1) {
+				display:block;
+			}
+		}
+		@media screen and (min-width:577px) and (max-width:992px) {
+			main {
+				flex-direction:column;
+			}
+			.columnaPrincipal{
+				width:100%;
+			}
+			.columnaSecundaria{
+				width:100%;
+			}
+			.Pelicula {
+				flex-direction:column;
+			}
+			.titulo {
+				width:100%;
+				margin:0;
+			}
+			.texto {
+				width:100%;
+			}
+			.imagen {
+				width:50%;
+			}
+			.comentario img {
+				width:30%;
+			}	
+			.peli {
+				display:none;
+				width:50%;
+			}
+			.peli:nth-child(1) {
+				display:inline;
+			}
+			.peli:nth-child(2) {
+				display:inline;
+			}
+		}
