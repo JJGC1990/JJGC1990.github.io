@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Documentación</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <button id="logout">Cerrar sesión</button>
+</header>
+
+<section id="step-1" class="step active">
+  <label for="tipoInterviniente"><strong>TIPO DE INTERVINIENTE</strong></label>
+  <select id="tipoInterviniente">
+    <option value="">-- Seleccione una opción --</option>
+    <option value="fisica">PERSONA FÍSICA</option>
+    <option value="juridica">PERSONA JURÍDICA</option>
+  </select>
+  <div class="botones">
+    <button id="btnSiguienteInterviniente">Siguiente</button>
+  </div>
+</section>
+
+<section id="step-2-fisica" class="step">
+  <h2>Datos de la Persona Física</h2>
+  <label for="estadoCivil"><strong>ESTADO CIVIL</strong></label>
+  <select id="estadoCivil">
+    <option value="">-- Seleccione --</option>
+    <option value="gananciales">CASADO EN BIENES GANANCIALES</option>
+    <option value="separacion">CASADO EN SEPARACIÓN DE BIENES</option>
+    <option value="soltero">SOLTERO</option>
+    <option value="divorciado">DIVORCIADO</option>
+    <option value="viudo">VIUDO</option>
+  </select>
+
+  <label for="tipoDocumento"><strong>TIPO DE DOCUMENTO</strong></label>
+  <select id="tipoDocumento">
+    <option value="">-- Seleccione --</option>
+    <option value="dni">DNI</option>
+    <option value="nie">NIE</option>
+  </select>
+
+  <fieldset>
+    <legend><strong>ACTIVIDAD PROFESIONAL</strong></legend>
+    <label><input type="checkbox" name="actividad" value="cuentaAjena"> TRABAJA POR CUENTA AJENA</label>
+    <label><input type="checkbox" name="actividad" value="cuentaPropia"> TRABAJA POR CUENTA PROPIA</label>
+    <label><input type="checkbox" name="actividad" value="pensionista"> PENSIONISTA</label>
+    <label><input type="checkbox" name="actividad" value="sinActividad"> SIN ACTIVIDAD</label>
+  </fieldset>
+
+  <fieldset>
+    <legend><strong>ORIGEN FONDOS</strong></legend>
+    <label><input type="checkbox" name="origen" value="ahorro"> AHORRO</label>
+    <label><input type="checkbox" name="origen" value="venta"> VENTA DE ACTIVO</label>
+    <label><input type="checkbox" name="origen" value="herencia"> HERENCIA</label>
+    <label><input type="checkbox" name="origen" value="rescate"> RESCATE FONDOS</label>
+    <label><input type="checkbox" name="origen" value="prima"> PRIMA DE SEGURO</label>
+    <label><input type="checkbox" name="origen" value="hipotecario"> PRÉSTAMO HIPOTECARIO</label>
+    <label><input type="checkbox" name="origen" value="bancario"> OTROS PRÉSTAMOS BANCARIOS</label>
+    <label><input type="checkbox" name="origen" value="pf"> PRÉSTAMO/DONACIÓN DE PERSONA FÍSICA</label>
+    <label><input type="checkbox" name="origen" value="pj"> PRÉSTAMO/DONACIÓN DE PERSONA JURÍDICA</label>
+  </fieldset>
+
+  <div class="botones">
+    <button id="btnVolverFisica">Volver atrás</button>
+    <button id="btnProcesarFisica">Continuar</button>
+  </div>
+</section>
+
+<section id="step-2-juridica" class="step">
+  <h2>Datos de la Persona Jurídica</h2>
+  <label for="sociedadReciente"><strong>SOCIEDAD DE RECIENTE CONSTITUCIÓN (MENOS A 1 AÑO)</strong></label>
+  <select id="sociedadReciente">
+    <option value="">-- Seleccione una opción --</option>
+    <option value="si">SÍ</option>
+    <option value="no">NO</option>
+  </select>
+
+  <fieldset>
+    <legend><strong>ORIGEN FONDOS</strong></legend>
+    <label><input type="checkbox" name="origenJ" value="activo"> ACTIVO CIRCULANTE</label>
+    <label><input type="checkbox" name="origenJ" value="venta"> VENTA DE ACTIVO</label>
+    <label><input type="checkbox" name="origenJ" value="capital"> AUMENTO DE CAPITAL</label>
+    <label><input type="checkbox" name="origenJ" value="aportacion"> APORTACIÓN DE LOS SOCIOS</label>
+    <label><input type="checkbox" name="origenJ" value="rescate"> RESCATE DE FONDOS</label>
+    <label><input type="checkbox" name="origenJ" value="hipotecario"> PRÉSTAMO HIPOTECARIO</label>
+    <label><input type="checkbox" name="origenJ" value="bancario"> OTROS PRÉSTAMOS BANCARIOS</label>
+    <label><input type="checkbox" name="origenJ" value="pf"> PRÉSTAMO/DONACIÓN DE PERSONA FÍSICA</label>
+    <label><input type="checkbox" name="origenJ" value="pj"> PRÉSTAMO/DONACIÓN DE PERSONA JURÍDICA</label>
+  </fieldset>
+
+  <div class="botones">
+    <button id="btnVolverJuridica">Volver atrás</button>
+    <button id="btnProcesarJuridica">Continuar</button>
+  </div>
+</section>
+
+<section id="step-result" class="step">
+  <h2>Documentación requerida</h2>
+  <ul id="listaDocumentacion"></ul>
+  <div class="botones">
+    <button id="btnVolverInicio">Volver al inicio</button>
+    <button id="btnPDF">Generar PDF</button>
+    <button id="btnExcel">Generar Excel</button>
+  </div>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
+
